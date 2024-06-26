@@ -1,0 +1,10 @@
+server:
+  port: 7070
+spring:
+  application:
+    name: Adapter
+  graphql:
+    graphiql:
+      enabled: true
+
+

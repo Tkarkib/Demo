@@ -1,0 +1,15 @@
+type Query {
+    accounts: [Account]
+}
+
+type Account {
+    id: ID!
+    userId: ID!
+    accountNumber: String!
+    balance: Float!
+}
+
+
+type Mutation {
+    createAccount(userId:ID!,accountNumber: String!, balance: Float!): Account
+}

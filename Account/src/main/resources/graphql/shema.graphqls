@@ -1,0 +1,38 @@
+enum CardType {
+    DEBIT
+    CREDIT
+}
+
+input CardInput {
+    cardType: CardType!
+}
+
+input AccountInput {
+    userId: ID!
+    accountNumber: String!
+    balance: Float!
+    cards: [CardInput!]
+}
+
+type Account {
+    id: ID!
+    accountNumber: String!
+    balance: Float!
+    userId: ID!
+    cards: [Card!]
+}
+
+type Card {
+    cardNumber: String!
+    cardType: CardType!
+    expiryDate: String!
+    cvv: Int!
+}
+
+type Query {
+    account(id: ID!): Account
+}
+
+type Mutation {
+    createAccount(account: AccountInput!): Account!
+}
